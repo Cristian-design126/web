@@ -5,6 +5,7 @@
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    overflow-x: auto; /* Permite scroll horizontal si es necesario */
 }
 
 #encabezado {
@@ -33,15 +34,13 @@
     color: #EFD80E;
 }
 
-/* Contenedor que agrupa el menú y la imagen grande */
 #contenedor-principal {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between; /* Asegura que ambos lados tengan espacio */
+    justify-content: space-between;
     margin: 20px 0;
 }
 
-/* Menú lateral */
 #izquierda {
     background: #646464;
     width: 20%;
@@ -59,15 +58,14 @@
     transition: color 0.3s ease;
 }
 
-/* Sección principal con imagen grande y texto */
 #seccion-principal {
-    background-color: #C9C9C9; /* Fondo gris claro */
+    background-color: #C9C9C9;
     padding: 20px;
     display: flex;
     align-items: center;
     border-radius: 50px;
-    width: 100%; /* Cambiar ancho */
-    margin-right: 20px; /* Agregar margen */
+    width: 100%;
+    margin-right: 20px;
 }
 
 .texto-lado {
@@ -99,17 +97,15 @@
     border-radius: 10px;
 }
 
-/* Sección de la derecha */
 #derecha {
     background-color: #a3a3a3;
-    width: 76%; /* Cambiar tamaño para igualarlo */
+    width: 76%;
     padding: 20px;
     border-radius: 50px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
     margin-left: 300px;
 }
 
-/* Imagen de éxito centrada */
 .imagen-exito {
     text-align: center;
     margin-top: 20px;
@@ -121,7 +117,6 @@
     border-radius: 10px;
 }
 
-/* Pie de página */
 #piepagina {
     clear: both;
     background-color: #8F0884;
@@ -145,4 +140,58 @@ h1, h5 {
 
 p {
     margin: 15px 0;
+}
+
+/* Media queries para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    #contenedor {
+        width: 100%; /* Asegura que el contenedor ocupe el ancho total */
+    }
+
+    #contenedor-principal {
+        flex-direction: column; /* Coloca el contenido en columna */
+    }
+
+    #seccion-principal, #derecha {
+        width: 100%;
+        margin-right: 0; /* Elimina margen en pantallas pequeñas */
+        margin-left: 0;
+        text-align: center; /* Centra el texto e imagen */
+    }
+
+    .imagen-grande {
+        margin-bottom: 20px; /* Agrega espacio debajo de la imagen */
+        text-align: center; /* Asegura que la imagen esté centrada */
+    }
+
+    .imagen-grande img {
+        max-width: 80%; /* Limita el tamaño de la imagen en móviles */
+    }
+
+    #izquierda {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px; /* Agrega espacio entre el menú lateral y el contenido */
+    }
+
+    #derecha {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Para pantallas medianas (tabletas) */
+@media only screen and (max-width: 1024px) {
+    #contenedor {
+        width: 90%;
+    }
+
+    #izquierda {
+        width: 30%;
+    }
+
+    #derecha {
+        width: 65%;
+        margin-left: 10px;
+    }
 }
